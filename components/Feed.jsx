@@ -6,7 +6,7 @@ import PromptCard from "./PromptCard";
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
-    <div className='mt-16 prompt_layout'>
+    <div className='mt-8 prompt_layout'>
       {data.map((post) => (
         <PromptCard
           key={post._id}
@@ -72,13 +72,24 @@ const Feed = () => {
       <form className='relative w-full flex-center'>
         <input
           type='text'
-          placeholder='Search for a tag or a username'
+          placeholder='Search for a prompt'
           value={searchText}
           onChange={handleSearchChange}
           required
           className='search_input peer'
         />
       </form>
+      <div className="mt-4">
+        <h1 className='head_text text-center'>
+          Discover & Share
+          <br className='max-md:hidden' />
+          <span className='blue_gradient text-center'> AI-Powered Prompts</span>
+        </h1>
+        <p className='desc text-center'>
+          Promptify is an open-source AI prompting tool for modern world to
+          discover, create and share creative prompts
+        </p>
+      </div>
 
       {/* All Prompts */}
       {searchText ? (

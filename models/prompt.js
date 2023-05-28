@@ -9,6 +9,10 @@ const PromptSchema = new Schema({
     type: String,
     required: [true, 'Prompt is required.'],
   },
+  optimized_prompt: {
+    type: String,
+    required: [false, 'Prompt is optional.'],
+  },
   tag: {
     type: String,
     required: [true, 'Tag is required.'],

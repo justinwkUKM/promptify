@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
+    "langchain": "^0.0.84",
     "mongodb": "^5.5.0",
     "mongoose": "^7.2.1",
     "next": "13.4.4",

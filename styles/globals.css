@@ -48,9 +48,9 @@
   background-image: radial-gradient(
       at 27% 37%,
       hsla(215, 98%, 61%, 1) 0px,
-      transparent 0%
+      transparent 30%
     ),
-        radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+        radial-gradient(at 79% 53%, rgb(237, 238, 165) 0px, transparent 80%);
   position: absolute;
   content: "";
   width: 100%;
@@ -81,7 +81,7 @@
 }
 
 .head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+  @apply mt-5 text-4xl font-extrabold leading-[1.15] text-black sm:text-5xl;
 }
 
 .orange_gradient {
@@ -101,7 +101,7 @@
 }
 
 .desc {
-  @apply mt-5 text-lg text-gray-600 sm:text-xl max-w-2xl;
+  @apply mt-4 text-lg text-gray-600 sm:text-sm max-w-2xl;
 }
 
 .search_input {
@@ -122,7 +122,7 @@
 
 /* Feed Component */
 .feed {
-  @apply mt-16 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
+  @apply m-2 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
 }
 
 /* Form Component */
