@@ -21,12 +21,12 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   };
 
   const handleCopy = () => {
-    if (!post.optimized_prompt || post.optimized_prompt != "") {
-      setCopied(post.prompt);
-      navigator.clipboard.writeText(post.prompt);
-    } else {
+    if (post.optimized_prompt != "") {
       setCopied(post.optimized_prompt);
       navigator.clipboard.writeText(post.optimized_prompt);
+    } else {
+      setCopied(post.prompt);
+      navigator.clipboard.writeText(post.prompt);
     }
     setTimeout(() => setCopied(false), 3000);
 
