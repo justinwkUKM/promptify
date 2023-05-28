@@ -7,7 +7,7 @@ import { LLMChain } from "langchain/chains";
 
 export const POST = async (request) => {
   const { userId, prompt, tag } = await request.json();
-  const optimized_prompt = ""
+  let optimized_prompt = ""
 
   const model = new OpenAI({ temperature: 0 });
   const lc_prompt = PromptTemplate.fromTemplate(
