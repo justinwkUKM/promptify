@@ -21,9 +21,15 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   };
 
   const handleCopy = () => {
-    setCopied(post.prompt);
-    navigator.clipboard.writeText(post.prompt);
+    if (!post.optimized_prompt || post.optimized_prompt != "") {
+      setCopied(post.prompt);
+      navigator.clipboard.writeText(post.prompt);
+    } else {
+      setCopied(post.optimized_prompt);
+      navigator.clipboard.writeText(post.optimized_prompt);
+    }
     setTimeout(() => setCopied(false), 3000);
+
   };
 
   return (
@@ -67,6 +73,13 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
       </div>
 
       <p className='my-4 font-satoshi text-sm text-gray-700'>{post.prompt}</p>
+      {post.optimized_prompt != "" && (
+        <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-6 dark:bg-gray-700" />
+      )}
+      <p className='my-4 font-satoshi italic text-sm text-gray-700'>
+        {post.optimized_prompt}
+      </p>
+
       <p
         className='font-inter text-sm blue_gradient cursor-pointer'
         onClick={() => handleTagClick && handleTagClick(post.tag)}

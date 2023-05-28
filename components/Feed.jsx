@@ -86,8 +86,8 @@ const Feed = () => {
           <span className='blue_gradient text-center'> AI-Powered Prompts</span>
         </h1>
         <p className='desc text-center'>
-          Promptify is an open-source AI prompting tool for modern world to
-          discover, create and share creative prompts
+          Promptify is an AI prompting tool for modern world to
+          discover, create, optimize and share creative prompts
         </p>
       </div>
 
