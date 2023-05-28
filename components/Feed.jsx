@@ -18,7 +18,7 @@ const PromptCardList = ({ data, handleTagClick }) => {
   );
 };
 
-const Feed = ({ data }) => {
+const Feed = () => {
   const [allPosts, setAllPosts] = useState([]);
 
   // Search states
@@ -27,7 +27,9 @@ const Feed = ({ data }) => {
   const [searchedResults, setSearchedResults] = useState([]);
 
   const fetchPosts = async () => {
-    const response = await fetch("/api/prompt");
+    const response = await fetch("/api/prompt", {
+      cache: 'no-store'
+    });
     const data = await response.json();
     setAllPosts(data);
   };
@@ -106,9 +108,3 @@ const Feed = ({ data }) => {
 export default Feed;
 
 
-export const getServerSideProps = async () => {
-  const response = await fetch("/api/prompt");
-  const data = await response.json();
-  console.log(response)
-  return { props: { data } };
-};
