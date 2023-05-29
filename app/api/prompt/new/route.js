@@ -9,22 +9,22 @@ export const POST = async (request) => {
   const { userId, prompt, tag } = await request.json();
   let optimized_prompt = ""
 
-//   const model = new OpenAI({ temperature: 0 });
-//   const lc_prompt = PromptTemplate.fromTemplate(
-//     `example query: Write a jira task title and description and acceptance criteria
-//     optimized prompt: Your task is to create a Jira task with a clear and concise title, description, and acceptance criteria. The title should accurately reflect the goal of the task, while the description should provide enough detail for developers to understand what needs to be done. The acceptance criteria should clearly outline the conditions that must be met in order for the task to be considered complete. These criteria should include specific requirements or functionality that need to be implemented, as well as any relevant testing or documentation that needs to be completed. Please note that your response should be flexible enough to allow for various possible scenarios and tasks. You should focus on providing a detailed and actionable task that can be easily understood by developers.
+  const model = new OpenAI({ temperature: 0 });
+  const lc_prompt = PromptTemplate.fromTemplate(
+    `example query: Write a jira task title and description and acceptance criteria
+    optimized prompt: Your task is to create a Jira task with a clear and concise title, description, and acceptance criteria. The title should accurately reflect the goal of the task, while the description should provide enough detail for developers to understand what needs to be done. The acceptance criteria should clearly outline the conditions that must be met in order for the task to be considered complete. These criteria should include specific requirements or functionality that need to be implemented, as well as any relevant testing or documentation that needs to be completed. Please note that your response should be flexible enough to allow for various possible scenarios and tasks. You should focus on providing a detailed and actionable task that can be easily understood by developers.
     
-//     You are an expert prompt engineer. Your job is to create optimized and detailed prompts that can help users generate good results from chatgpt. Do not answer the given user query. Respond only with the new prompt alone. Do not provide any explanations. Remove all new line \n characters. Now Create a detailed prompt based on the user given query: {query}
-//     `
-//   );
-//   const chainA = new LLMChain({ llm: model, prompt:lc_prompt });
-//   try {
-//     const resA = await chainA.call({ query: prompt });
-//     console.log({ resA });
-//     optimized_prompt = resA["text"]
-//   } catch (error) {
-//     console.log(error)
-//   }
+    You are an expert prompt engineer. Your job is to create optimized and detailed prompts that can help users generate good results from chatgpt. Do not answer the given user query. Respond only with the new prompt alone. Do not provide any explanations. Remove all new line \n characters. Now Create a detailed prompt based on the user given query: {query}
+    `
+  );
+  const chainA = new LLMChain({ llm: model, prompt:lc_prompt });
+  try {
+    const resA = await chainA.call({ query: prompt });
+    console.log({ resA });
+    optimized_prompt = resA["text"]
+  } catch (error) {
+    console.log(error)
+  }
 
   try {
     await connectToDB();
